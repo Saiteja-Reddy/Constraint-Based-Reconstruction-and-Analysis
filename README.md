@@ -8,9 +8,6 @@ The main aim of this independent study would be to understand the basics of geno
 ### Topics Covered
 1. [Basics of Network Reconstruction](files/basics.md)
 2. [Process of Network Reconstruction for different types of networks](files/process.md)
-  - Metabolic Networks
-  - Signalling Networks
-  - Biochemical Reaction Networks
 3. [Mathematical Properties of Reconstructed Networks](files/math.md)
   - The Stoichiometric Matrix
   - Network Topological Properties
@@ -31,6 +28,8 @@ The main aim of this independent study would be to understand the basics of geno
   - Understand the above topics with required mathematical formulations.
   - Setup and get comfortable working with COBRA Toolbox.
   - Exposure to recent developments in Constraint Based Optimization.
+
+  $`a^2+b^2=c^2`$
 
 ### Main References
   - [Systems Biology : Constraint-based Reconstruction and Analysis](https://www.cambridge.org/us/academic/subjects/life-sciences/genomics-bioinformatics-and-systems-biology/systems-biology-constraint-based-reconstruction-and-analysis?format=HB) by **Bernhard Palsson**.
