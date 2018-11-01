@@ -65,3 +65,5 @@ With a computational model of a network that has the ability to meet growth and 
 3. **Finding missing parts: gap-filling :** The incompleteness of a bottom-up reconstruction brings out the holes or gaps in our knowledge base about the target organism. Algorithms have been developed to automatically fill in such gaps. Such computations basically generate hypotheses for what is missing and thus systematize the discovery process.
 
 4. **Understanding complex processes :** Genome-scale models can be used to compute, simulate, and study complex cellular processes.
+
+[Back to Contents](../README.md)
