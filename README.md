@@ -29,8 +29,6 @@ The main aim of this independent study would be to understand the basics of geno
   - Setup and get comfortable working with COBRA Toolbox.
   - Exposure to recent developments in Constraint Based Optimization.
 
-  $`a^2+b^2=c^2`$
-
 ### Main References
   - [Systems Biology : Constraint-based Reconstruction and Analysis](https://www.cambridge.org/us/academic/subjects/life-sciences/genomics-bioinformatics-and-systems-biology/systems-biology-constraint-based-reconstruction-and-analysis?format=HB) by **Bernhard Palsson**.
   - [Youtube - UCSD SBRG Video Presentations.](https://www.youtube.com/channel/UC_FFJA0zLSkgKKNIquaF12g/videos)
