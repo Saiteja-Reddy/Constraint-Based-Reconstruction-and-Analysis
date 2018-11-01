@@ -51,7 +51,7 @@ A curated reconstruction that is mathematically represented can be used to compu
 
 With a computational model of a network that has the ability to meet growth and basic physiological demands, we incorporate and examine other organism-specific network properties. This ability then leads to the evaluation of the properties and capabilities of the reconstructed network and validation against data sets available for the target organism. This validation process can be quite comprehensive if much data is available for the target organism.
 
-*The result of this four-step process is a mathematical representation of all the biochemical, genetic, and genomic information available for the target organ- ism. This network underlies the integrated metabolic functions of the organism.*
+*The result of this four-step process is a mathematical representation of all the biochemical, genetic, and genomic information available for the target organism. This network underlies the integrated metabolic functions of the organism.*
 
 ### Uses of Reconstruction
 
@@ -62,6 +62,6 @@ With a computational model of a network that has the ability to meet growth and 
 
 ![alt text](pics/2.4.png)
 
-3. **Finding missing parts: gap-filling :** The incompleteness of a bottom-up reconstruction brings out the holes or gaps in our knowledge base about the target organism. Algorithms have been developed to automatically fill in such gaps. Such compu- tations basically generate hypotheses for what is missing and thus systematize the discovery process.
+3. **Finding missing parts: gap-filling :** The incompleteness of a bottom-up reconstruction brings out the holes or gaps in our knowledge base about the target organism. Algorithms have been developed to automatically fill in such gaps. Such computations basically generate hypotheses for what is missing and thus systematize the discovery process.
 
 4. **Understanding complex processes :** Genome-scale models can be used to compute, simulate, and study complex cellular processes.
