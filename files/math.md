@@ -65,3 +65,6 @@ gives the number of reactions in which compound i participates. This number, ρi
 
 
 **Node connectivity and network states :** It should be noted that highly connected nodes may represent *effective targets* for drug development. However, topological properties of networks must be interpreted in the context of the more biologically relevant functional network states and their properties. One such consideration, for instance, is that a metabolic network must make all the biomass components of the cell in order for it to grow. Therefore, even eliminating a step in a linear low-flux pathway leading to the synthesis of co-factors, vitamins, or amino acids, will prevent a genome-scale metabolic network from supporting growth. It has been found that the connectivity of a node does not correlate with the lethality of its links.
+
+
+[Back to Contents](../README.md)
