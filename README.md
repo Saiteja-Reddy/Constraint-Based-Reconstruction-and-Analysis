@@ -9,14 +9,7 @@ The main aim of this independent study would be to understand the basics of geno
 1. [Basics of Network Reconstruction](files/basics.md)
 2. [Process of Network Reconstruction for different types of networks](files/process.md)
 3. [Mathematical Properties of Reconstructed Networks](files/math.md)
-  - The Stoichiometric Matrix
-  - Network Topological Properties
-  - Pathways
 4. [Constraints](files/constraints.md)
-  - Stating and Imposing Constraints to networks
-  - Various Types of Constraints, their representations and analysis
-  - Constraint-based modelling
-  - Process of Reconstruction of GEMs
 5. [Optimization](files/optimize.md)
   - Overview of Constraint-based Methods
   - Introduction to the Constraint-based reconstruction and analysis (COBRA) methods
