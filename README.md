@@ -13,7 +13,8 @@ The main aim of this independent study would be to understand the basics of geno
 5. [Optimization](files/optimize.md)
 6. [Getting Started with COBRA Toolbox](files/cobra.md)
 7. [Metabolic Network Perspective](files/metabolic.md)
-8. Understanding from metabolic networks perspective using the COBRA Toolbox.
+8. [Integration of Expression Data into GEM Reconstructions](files/integration.md)
+9. Understanding from metabolic networks perspective using the COBRA Toolbox.
 
 ### Outcome:
   - Understand the above topics with required mathematical formulations.
