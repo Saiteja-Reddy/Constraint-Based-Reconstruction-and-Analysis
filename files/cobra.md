@@ -12,14 +12,16 @@ Below Instructions are for Linux Based Systems.
 2. **Git:** Check if you have a working installation of git.
 
   ```
-   $ git --version ```
+   $ git --version
+  ```
 
   If installed properly, this will return git  version number.
 
 3. **Curl:** Check if you have a working installation of curl.
 
   ```
-  $ curl --version```
+  $ curl --version
+  ```
 
   If installed properly, this will return curl  version number.
 
@@ -57,7 +59,7 @@ Below Instructions are for Linux Based Systems.
     ```
     To your bashrc file add the below lines:
 
-    ```
+    ``` bash
     export GUROBI_HOME="/path-to-gurobi/gurobi<ver>/"
 export PATH="${PATH}:${GUROBI_HOME}/bin"
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
