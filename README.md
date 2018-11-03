@@ -11,11 +11,8 @@ The main aim of this independent study would be to understand the basics of geno
 3. [Mathematical Properties of Reconstructed Networks](files/math.md)
 4. [Constraints](files/constraints.md)
 5. [Optimization](files/optimize.md)
-  - Overview of Constraint-based Methods
-  - Introduction to the Constraint-based reconstruction and analysis (COBRA) methods
-  - Integration of Omics Data into the constraints
-  - Formulating Objective Functions
-6. Understanding from metabolic networks perspective using the COBRA Toolbox.
+6. [Getting Started with COBRA Toolbox](files/cobra.md)
+7. Understanding from metabolic networks perspective using the COBRA Toolbox.
 
 ### Outcome:
   - Understand the above topics with required mathematical formulations.
