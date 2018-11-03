@@ -11,13 +11,15 @@ Below Instructions are for Linux Based Systems.
 1. **MATLAB:** Ensure that you have a compatible and working MATLAB installation. No support is provided for versions older than R2014b. Find the latest version of MATLAB [here](https://in.mathworks.com/products/matlab.html).
 2. **Git:** Check if you have a working installation of git.
 
-  `` $ git --version ``
+  ```
+   $ git --version ```
 
   If installed properly, this will return git  version number.
 
 3. **Curl:** Check if you have a working installation of curl.
 
-  `` $ curl --version ``
+  ```
+  $ curl --version```
 
   If installed properly, this will return curl  version number.
 
@@ -27,7 +29,9 @@ Below Instructions are for Linux Based Systems.
   - [GUROBI](http://www.gurobi.com/)
   - [MOSEK](https://www.mosek.com/)
 
-   Make sure that you install a compatible solver. The compatibility list is available [here](https://github.com/opencobra/cobratoolbox/blob/master/docs/source/installation/compatMatrix.rst).
+   Make sure that you install a compatible solver.
+
+   The compatibility list is available [here](https://github.com/opencobra/cobratoolbox/blob/master/docs/source/installation/compatMatrix.rst).
 
    Do refer the COBRA docs for installation of various solvers.
 
