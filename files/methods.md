@@ -33,4 +33,4 @@ There are numerous methods that have been developed to analyze constraint-based 
 | Thermodynamics-based Metabolic Flux Analysis 	| How can one use thermodynamic data to generate thermodynamically feasible flux profiles? 	|
 | Uniform Random Sampling 	| What are the distributions of network states that have not been excluded based on physico-chemical constraints and/or experimental measurements? What are the completely or partially correlated reaction sets? 	|
 
-[Back to Optimization](../optimize.md)
+[Back to Optimization](optimize.md)

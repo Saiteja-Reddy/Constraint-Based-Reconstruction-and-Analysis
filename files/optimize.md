@@ -51,8 +51,53 @@ where the vector **w** is a vector of weights (**w<sub>i</sub>**) on the interna
 
 There are numerous methods that have been developed to analyze constraint-based reconstructions of metabolic networks using experimental data to answer biological questions. Find here [the list of some of these methods and questions they can help to answer](methods.md).
 
-One optimal solution is rarely of interest in iso- lation. The constraint-based optimization methods are scalable and can be applied repeatedly for varying environmental and genetic parameters. This scalability has spurred a growing number of analysis methods that have been developed under the constraint-based approach.
+One optimal solution is rarely of interest in isolation. The constraint-based optimization methods are scalable and can be applied repeatedly for varying environmental and genetic parameters. This scalability has spurred a growing number of analysis methods that have been developed under the constraint-based approach.
 
 Deployment of COBRA methods Quality GEMs and the suite of COBRA tools have led to a spectrum of applications. The COBRA methods are used to address a variety of questions. A series of well-curated GEMs for model organisms have been widely used, and COBRA methods have been deployed to study their various attributes and uses.
+
+### Analysis of Omics Data
+
+**GEMs provide a context for integration and interpretation of omics data :** Given their biochemical, genetic, and genomic structure, bottom-up network reconstructions provide a context for omic data-mapping. There are many advantages to using GEMs for omics data analysis:
+- They help tie the measurements together functionally and are not treated as individual measurements, but rather as *state variables* of a system.
+- Network reconstructions capture the relationship between genes and enzyme activities explicitly. The embedded relationships between genomic location, mRNAs, proteins, protein complexes, and enzymatic activities provide explicit ways to integrate omic data with GEMs.
+- It is possible to map transcriptome, proteome, and metabolome data on a network map and elucidate the active pathways under a given experimental condition.
+- The examination of omic data sets in the context of GEMs can direct research and provide biological insight.
+
+<img src="pics/5.5.png" width="550" height="350">
+
+In the above image, we see the uses of high-throughput data with constraint-based models.
+
+**Major classes of applications:** COBRA methods can be used to interpret and augment the information content in omic data sets using a biochemically validated underlying cellular network, and thus help with the big data to knowledge conversion.
+
+ *A number of COBRA methods have been developed to enable omics data-mapping onto reconstructed networks.*
+
+ Three types of applications are described in the following sections:
+1. Similar to pathway enrichment and interaction networks, high-throughput data can be integrated with the metabolic network topology to determine enriched regions and even significantly perturbed metabolites.
+2. Omic data add an additional layer of constraints for reaction fluxes. Integrated expression-profiling data can determine context-specific flux distributions, which increases the fidelity of the data as well as the accuracy of flux prediction. Omics data can be used to build cell-/tissue-specific models of human metabolism by removing unexpressed reactions from the global human metabolic network.
+3. Constraint-based analysis predictions can be compared and validated against high-throughput data sets. One can compare COBRA solutions of different objectives against data types to assess the prediction of the detailed molecular phenotype.
+
+#### Omics Data-mapping and Network Topology
+
+Reconstructions can be displayed graphically as *reaction maps*. Omics data can be displayed on these maps, next to the component that they represent. This procedure organizes the omics data with the known underlying biochemistry at a large scale, possibly a genome scale, although such maps would become very large. The reaction maps allow one to look at omics data at the systems level and help decipher their relationships and the consequences of changed cellular states.
+
+**Reporter metabolites:** Differential expression data for genes can be mapped onto metabolic networks and used to determine which parts of the network are likely to change the most between the two conditions compared. The metabolites whose concentrations are likely to change the most can be identified, and they are referred to as *reporter metabolites*.
+
+<img src="pics/5.6.png" width="400" height="300">
+
+As shown above, the metabolic map in a cell can be represented with a bipartite undirected graph. In this graph, a metabolite node is linked to all the enzymes that catalyze reactions involving this metabolite. The enzyme node is linked to all the metabolites taking part in a particular reaction. A second unipartite undirected graph is constructed to link enzymes that share a common metabolite. Transcriptomic data are then mapped onto these graphs. The algorithm then computes the reporter metabolites as well as coordinately regulated subnetworks. These computations were found to elucidate metabolic perturbations between the conditions being compared.
+
+#### Omics Data as Constraints
+
+Condition-specific omics data sets can be used as constraints. A number of methods have been developed to integrate systematically genome-scale omics data as constraints into GEMs.
+
+The use of these algorithms falls into two main categories. The first is to use omics data as constraints on quantitative models that predict phenotypic functions. This use has been evaluated critically and these methods are still in need of development.
+
+The second use is a semi-quantitative approach to customize global reconstructions for multicellular organisms to particular cell or tissue types based on expression profiling data from the target cells. This use has led to a number of successful studies.
+
+#### Omics Data and Validation of GEM Predictions
+
+GEMs can compute overall phenotypes. They can predict the detailed expression and activity state of a network by forcing the synchronization of all cellular parts needed to generate the overall phenotypic state. The biological predictions that such computations make can subsequently be validated using omics data.
+
+*Reconstructions thus increase the ‘resolution’ of understanding of omics data as they can relate all the measurements against a mechanistic context rather than treating the measurements as independent.*
 
 [Back to Contents](../README.md)
