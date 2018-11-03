@@ -41,11 +41,11 @@ Below Instructions are for Linux Based Systems.
 
    **Steps for Installation of GUROBI solver on *ADA*:**
 
-    * Go to [GUROBI site](http://www.gurobi.com/), register with your Institute ID and login.
-    * Go to [*Get Gurobi*](http://www.gurobi.com/downloads/download-center) and get an Academic License.
-    * You can view your current liceses [here](https://user.gurobi.com/download/licenses/current).
-    * Download the Gurobi optimizer from [here](http://www.gurobi.com/downloads/gurobi-optimizer).
-    * Navigate to the directory where Gurobi was downloaded and do
+    - Go to [GUROBI site](http://www.gurobi.com/), register with your Institute ID and login.
+    - Go to [*Get Gurobi*](http://www.gurobi.com/downloads/download-center) and get an Academic License.
+    - You can view your current liceses [here](https://user.gurobi.com/download/licenses/current).
+    - Download the Gurobi optimizer from [here](http://www.gurobi.com/downloads/gurobi-optimizer).
+    - Navigate to the directory where Gurobi was downloaded and do
 
     ``` bash
     $ tar -xvzf <archive>.tar.gz
