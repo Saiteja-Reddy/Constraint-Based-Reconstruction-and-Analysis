@@ -67,7 +67,7 @@ Below Instructions are for Linux Based Systems.
 
    The last line for the path of License File will be different depending on where you saved the license when you ran the command ``grbgetkey``.
 
-   ** Note :** For HPC machines like Ada, the license is for one node at a time. So if you register GUROBI once for a node make sure you are using that same node for computation. You have to install a license to each node if you want to use GUROBI with any node. *Make sure you change the license file path whenever you are switching nodes.*
+   **Note :** For HPC machines like Ada, the license is for one node at a time. So if you register GUROBI once for a node make sure you are using that same node for computation. You have to install a license to each node if you want to use GUROBI with any node. *Make sure you change the license file path whenever you are switching nodes.*
 
   5. Now, download Cobratoolbox itself.
 
