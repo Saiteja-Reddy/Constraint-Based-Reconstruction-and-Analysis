@@ -37,9 +37,9 @@ Below Instructions are for Linux Based Systems.
 
    Do refer the COBRA docs for installation of various solvers.
 
-    I've installed [GUROBI](http://www.gurobi.com/) on the *Institute's HPC ADA*.
+   I've installed [GUROBI](http://www.gurobi.com/) on thee *Institute's HPC ADA*.
 
-    **Steps for Installation of GUROBI solver on *ADA*:**
+   **Steps for Installation of GUROBI solver on *ADA*:**
 
     * Go to [GUROBI site](http://www.gurobi.com/), register with your Institute ID and login.
     * Go to [*Get Gurobi*](http://www.gurobi.com/downloads/download-center) and get an Academic License.
