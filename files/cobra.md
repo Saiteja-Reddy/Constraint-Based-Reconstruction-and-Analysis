@@ -41,40 +41,39 @@ Below Instructions are for Linux Based Systems.
 
    **Steps for Installation of GUROBI solver on *ADA*:**
 
-    - Go to [GUROBI site](http://www.gurobi.com/), register with your Institute ID and login.
-    - Go to [*Get Gurobi*](http://www.gurobi.com/downloads/download-center) and get an Academic License.
-    - You can view your current liceses [here](https://user.gurobi.com/download/licenses/current).
-    - Download the Gurobi optimizer from [here](http://www.gurobi.com/downloads/gurobi-optimizer).
-    - Navigate to the directory where Gurobi was downloaded and do
+   - Go to [GUROBI site](http://www.gurobi.com/), register with your Institute ID and login.
+   - Go to [*Get Gurobi*](http://www.gurobi.com/downloads/download-center) and get an Academic License.
+   - You can view your current liceses [here](https://user.gurobi.com/download/licenses/current).
+   - Download the Gurobi optimizer from [here](http://www.gurobi.com/downloads/gurobi-optimizer).
+   - Navigate to the directory where Gurobi was downloaded and do
 
-    ``` bash
-    $ tar -xvzf <archive>.tar.gz
-    $ cd gurobi<ver-num>/linux64/bin
-    $ grbgetkey YOUR-LICENSE-KEY-FROM-SITE
+		```
+    	$ tar -xvzf <archive>.tar.gz
+    	$ cd gurobi<ver-num>/linux64/bin
+    	$ grbgetkey YOUR-LICENSE-KEY-FROM-SITE
+    	$ vim ~/.bashrc
+      ```
 
-    In which directory would you like to store the Gurobi license key file?
-    [hit Enter to store it in /home/<userid>]:
+   To your **bashrc** file add the below lines:
 
-    $ vim ~/.bashrc
-    ```
-    To your bashrc file add the below lines:
 
-    ``` bash
-    export GUROBI_HOME="/path-to-gurobi/gurobi<ver>/"
-export PATH="${PATH}:${GUROBI_HOME}/bin"
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
-export GUROBI_PATH="${GUROBI_HOME}"
-export GRB_LICENSE_FILE="/path-to-gurobi/gurobi<ver>/linux64/gurobi.lic"
-    ```
-    The last line for the path of License File will be different depending on where you saved the license when you ran the command ``grbgetkey``.
+        export GUROBI_HOME="/path-to-gurobi/gurobi<ver>/"
+        export PATH="${PATH}:${GUROBI_HOME}/bin"
+        export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
+        export GUROBI_PATH="${GUROBI_HOME}"
+        export GRB_LICENSE_FILE="/path-to-gurobi/gurobi<ver>/linux64/gurobi.lic"
 
-    ** Note: ** For HPC machines like Ada, the license is for one node at a time. So if you register GUROBI once for a node make sure you are using that same node for computation. You have to install a license to each node if you want to use GUROBI with any node. *Make sure you change the license file path whenever you are switching nodes.*
+
+
+   The last line for the path of License File will be different depending on where you saved the license when you ran the command ``grbgetkey``.
+
+   ** Note :** For HPC machines like Ada, the license is for one node at a time. So if you register GUROBI once for a node make sure you are using that same node for computation. You have to install a license to each node if you want to use GUROBI with any node. *Make sure you change the license file path whenever you are switching nodes.*
 
   5. Now, download Cobratoolbox itself.
 
-    ```
+   ```
     git clone --depth=1 https://github.com/opencobra/cobratoolbox.git cobratoolbox
-    ```
+   ```
 
  6. Launch MATLAB. On HPC, first get an interactive session/node, load the MATLAB module and then launch MATLAB.
  7. Change to the folder to cobratoolbox/ and run from MATLAB.
