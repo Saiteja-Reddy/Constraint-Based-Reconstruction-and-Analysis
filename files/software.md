@@ -143,6 +143,63 @@ Refer: [Flux Variability analysis Cobra](https://opencobra.github.io/cobratoolbo
 
 ### Extraction of Context-Specific Models
 
+Genome-scale reconstruction of metabolism (GEM) can illuminate the molecular basis of cell phenotypes exhibited by an organism. Since some enzymes are only active in specific cell types or environmental conditions, several algorithms have been developed to extract context-specific models that capture the metabolism of individual tissues or cell types. Therefore, a context-specific model is a subset of the GEM, in which inactive reactions are removed.
 
+Reaction removal is determined by the algorithm used, gene expression levels, presence of proteins or metabolites, experimental data availability, literature knowledge, and/or predefined metabolic functions of the cell type that need to be maintained in the extracted model. These decisions on methodology and data processing significantly influence the size, functionality and accuracy of constructed context-specific models.
+
+While there is no strong evidence that one model extraction method (MEM) universally gives the most physiologically accurate models, each method has different underlying assumptions that affect the resulting model.
+
+*Therefore, selection of the MEM and the associated parameters should be done while considering the goals of the study and the available data.*
+
+
+Multiple algorithms have been suggested to automatically derive context specific networks from a generic reconstruction and a set of transcriptomic or proteomic data. The COBRA toolbox offers the following selection of extraction agorithms:
+
+- FASTCORE  - Define one set of core reactions that is guaranteed to be active in the extracted model and find the minimum number of reactions possible to support the core;
+- GIMME - Minimize usage of low-expression reactions while keeping the objective (e.g., biomass) above a certain value. Does not favor inclusion of reactions not related to the objective;
+- iMAT - Find the optimal trade-off between including high-expression reactions and removing low-expression reactions;
+- INIT - Find the optimal trade-off between including and removing reactions based on their given weights. If desired, accumulation of certain metabolites can be allowed or even forced;
+- MBA - Define high-confidence reactions to ensure activity in the extracted model. Medium confidence reactions are only kept when a certain parsimony trade-off is met. In random order, prune other reactions and remove them if not required to support high- or medium- confidence reactions;
+- mCADRE - Define a set of core reactions and prune all other reactions based on their expression, connectivity to core and confidence score. Remove reactions not necessary to support the core or defined functionalities. Core reactions are only removed if supported by a certain number of zero-expression reactions.
+
+
+For convenience, there is a common interface to use these algorithms provided in the createTissueSpecificModel method. The method can be called as follow:
+
+```
+tissueModel = createTissueSpecificModel(model, options)
+```
+
+Example usage for iMAT:
+
+```
+modelFileName = 'ecoli_core_model.mat';
+modelDirectory = getDistributedModelFolder(modelFileName); %Look up the folder for the distributed Models.
+modelFileName= [modelDirectory filesep modelFileName]; % Get the full path. Necessary to be sure, that the right model is loaded
+
+model = readCbModel(modelFileName);
+
+load('dataEcoli');
+
+options = 'options_iMAT';
+
+load(['options_methods' filesep options]);
+
+iMAT_model = createTissueSpecificModel(model, options);
+```
+
+For the iMAT method, the available parameter options are (with all options marked with * being optional):
+
+- options.solver : 'iMAT'
+- **options.expressionRxns :** gene expression data corresponding to model.rxns. Note : If no gene expression data are available for a reaction, set the value to -1 (Use mapExpressionToReactions function to get this from raw expresion data)
+- **options.threshold_lb :** lower bound of gene expression threshold, reactions with expression below this value are "non-expressed"
+- **options.threshold_ub :** upper bound of gene expression threshold, reactions with expression above this value are "expressed"
+- options.tol* : minimum flux value for "expressed" reactions (default - 1e-8)
+- options.core* : list of reaction names that are associated with a high confidence (default - no core reactions)
+- options.logfile* : name of the file to save the MILP log (defaut - 'MILPlog')
+options.runtime* : maximum solve time for the MILP (default - 7200s)
+
+
+
+
+Refer: [Extraction of Context-Specific Models Cobra](https://opencobra.github.io/cobratoolbox/stable/tutorials/tutorialExtractionTranscriptomic.html)
 
 [Back to Contents](../README.md)
