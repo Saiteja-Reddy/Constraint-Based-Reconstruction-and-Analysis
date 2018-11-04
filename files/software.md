@@ -141,5 +141,8 @@ rxnsList = {'DM_atp_c_'; 'ACOAHi'; 'ALCD21_D'; 'LALDO'; 'ME2m';...
 
 Refer: [Flux Variability analysis Cobra](https://opencobra.github.io/cobratoolbox/stable/tutorials/tutorialFVA.html)
 
+### Extraction of Context-Specific Models
+
+
 
 [Back to Contents](../README.md)
