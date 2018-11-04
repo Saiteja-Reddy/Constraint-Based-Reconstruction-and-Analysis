@@ -24,3 +24,4 @@ The main aim of this independent study would be to understand the basics of geno
 ### Main References
   - [Systems Biology : Constraint-based Reconstruction and Analysis](https://www.cambridge.org/us/academic/subjects/life-sciences/genomics-bioinformatics-and-systems-biology/systems-biology-constraint-based-reconstruction-and-analysis?format=HB) by **Bernhard Palsson**.
   - [Youtube - UCSD SBRG Video Presentations.](https://www.youtube.com/channel/UC_FFJA0zLSkgKKNIquaF12g/videos)
+  - [Systems Biology: Constraint-based Metabolic Reconstructions and Analysis, Utah State University](https://systemsbiology.usu.edu/)
