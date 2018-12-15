@@ -41,6 +41,6 @@ See the demo on Ada below, when you want to start RAVEN Toolbox on MATLAB.
 [![asciicast](https://asciinema.org/a/PcZHR0Rt7Xste3FOA6GkUHduQ.svg)](https://asciinema.org/a/PcZHR0Rt7Xste3FOA6GkUHduQ)
 
 
-For the official RAVEN Toolbox Install Instructions - [refer here](https://github.com/SysBioChalmers/RAVEN/wiki/Installation.
+For the official RAVEN Toolbox Install Instructions - [refer here](https://github.com/SysBioChalmers/RAVEN/wiki/Installation).
 
 [Back to Contents](../README.md)
