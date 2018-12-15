@@ -12,6 +12,8 @@ The main aim of this independent study would be to understand the basics of geno
 7. [Integration of Expression Data into GEM Reconstructions](files/integration.md)
 8. [Getting Started with COBRA Toolbox](files/cobra.md)
 9. [Using the COBRA Toolbox](files/software.md)
+10. [Getting Started with the RAVEN Toolbox](files/raven.md)
+11. [Using the RAVEN Toolbox](files/raven_usage.md)
 
 ### Outcome:
   - Understand the above topics with required mathematical formulations.
