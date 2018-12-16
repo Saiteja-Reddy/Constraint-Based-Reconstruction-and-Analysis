@@ -60,26 +60,50 @@ Above is the flow chart for FBA Analysis.
 Sample FBA Analysis:
 
 ```
-initCobraToolbox
-changeCobraSolver ('gurobi', 'all');
-global CBTDIR
+>> initCobraToolbox
+>> changeCobraSolver ('gurobi', 'all');
+>> global CBTDIR
 
-modelFileName = 'Recon2.0model.mat';
+>> modelFileName = 'Recon2.0model.mat';
 
-modelDirectory = getDistributedModelFolder(modelFileName); %Look up the folder for the distributed Models.
+>> modelDirectory = getDistributedModelFolder(modelFileName); %Look up the folder for the distributed Models.
 
-modelFileName= [modelDirectory filesep modelFileName]; % Get the full path. Necessary to be sure, that the right model is loaded
+>> modelFileName= [modelDirectory filesep modelFileName]; % Get the full path. Necessary to be sure, that the right model is loaded
 
-model = readCbModel(modelFileName);
+>> model = readCbModel(modelFileName);
 
-modelaerobic = model;
-printRxnFormula(model, 'DM_atp_c_');
-modelaerobic = changeObjective (modelaerobic, 'DM_atp_c_');
+>> modelaerobic = model;
+>> printRxnFormula(model, 'DM_atp_c_');
+DM_atp_c_	h2o[c] + atp[c] 	->	adp[c] + h[c] + pi[c]
 
-modelaerobic = changeRxnBounds (modelaerobic, 'EX_glc(e)', -20, 'l');
-modelaerobic = changeRxnBounds (modelaerobic, 'EX_o2(e)', -1000, 'l');
+>> modelaerobic = changeObjective (modelaerobic, 'DM_atp_c_');
 
-FBAaerobic = optimizeCbModel (modelaerobic, 'max')
+>> modelaerobic = changeRxnBounds (modelaerobic, 'EX_glc(e)', -20, 'l');
+>> modelaerobic = changeRxnBounds (modelaerobic, 'EX_o2(e)', -1000, 'l');
+
+>> FBAaerobic = optimizeCbModel (modelaerobic, 'max')
+
+FBAaerobic =
+
+  struct with fields:
+
+         full: [7440×1 double]
+          obj: 1000
+        rcost: [7440×1 double]
+         dual: [5063×1 double]
+        slack: [5063×1 double]
+       solver: 'gurobi'
+    algorithm: 'default'
+         stat: 1
+     origStat: 'OPTIMAL'
+         time: 0.3385
+        basis: [1×1 struct]
+            x: [7440×1 double]
+            f: 1000
+            y: [5063×1 double]
+            w: [7440×1 double]
+            v: [7440×1 double]
+
 ```
 
 When oxygen and all carbon sources (internal and external) are provided the flux through ATP demand reaction can reach its maximum rate of 1000 mol/min/gDW.
@@ -96,48 +120,130 @@ Flux variability analysis (FVA) is a widely used computational tool for evaluati
 Sample Run Example:
 
 ```
-initCobraToolbox
-changeCobraSolver ('gurobi', 'all');
+>> initCobraToolbox
+>> changeCobraSolver ('gurobi', 'all');
 
-global CBTDIR
-modelFileName = 'Recon2.0model.mat';
-modelDirectory = getDistributedModelFolder(modelFileName); %Look up the folder for the distributed Models.
-modelFileName= [modelDirectory filesep modelFileName]; % Get the full path. Necessary to be sure, that the right model is loaded
-model = readCbModel(modelFileName);
+>> global CBTDIR
+>> modelFileName = 'Recon2.0model.mat';
+>> modelDirectory = getDistributedModelFolder(modelFileName); %Look up the folder for the distributed Models.
+>> modelFileName= [modelDirectory filesep modelFileName]; % Get the full path. Necessary to be sure, that the right model is loaded
+>> model = readCbModel(modelFileName);
 
-[selExc, selUpt] = findExcRxns(model);
-uptakes = model.rxns(selUpt);
-subuptakeModel = extractSubNetwork(model, uptakes);
-hiCarbonRxns = findCarbonRxns(subuptakeModel,1);
-modelalter = changeRxnBounds(model, hiCarbonRxns, 0, 'b');
+>> [selExc, selUpt] = findExcRxns(model);
+>> uptakes = model.rxns(selUpt);
+>> subuptakeModel = extractSubNetwork(model, uptakes);
+>> hiCarbonRxns = findCarbonRxns(subuptakeModel,1);
+>> modelalter = changeRxnBounds(model, hiCarbonRxns, 0, 'b');
 
-energySources = {'EX_adp'; 'EX_amp(e)'; 'EX_atp(e)'; 'EX_co2(e)';...
+>> energySources = {'EX_adp'; 'EX_amp(e)'; 'EX_atp(e)'; 'EX_co2(e)';...
 'EX_coa(e)'; 'EX_fad(e)'; 'EX_fe2(e)'; 'EX_fe3(e)'; 'EX_gdp(e)';...
 'EX_gmp(e)'; 'EX_gtp(e)'; 'EX_h(e)'; 'EX_h2o(e)'; 'EX_h2o2(e)';...
 'EX_nad(e)'; 'EX_nadp(e)'; 'EX_no(e)'; 'EX_no2(e)'; 'EX_o2s(e)'};
-modelalter = changeRxnBounds (modelalter, energySources, 0, 'l');
+>> modelalter = changeRxnBounds (modelalter, energySources, 0, 'l');
 
-% modelfva1 represents aerobic condition
-modelfva1 = modelalter;
-modelfva1 = changeRxnBounds(modelfva1, 'EX_glc(e)', -20, 'l');
-modelfva1 = changeRxnBounds(modelfva1, 'EX_o2(e)', -1000, 'l');
+>> % modelfva1 represents aerobic condition
+>> modelfva1 = modelalter;
+>> modelfva1 = changeRxnBounds(modelfva1, 'EX_glc(e)', -20, 'l');
+>> modelfva1 = changeRxnBounds(modelfva1, 'EX_o2(e)', -1000, 'l');
 
-% modelfva2 represents anaerobic condition
-modelfva2 = modelalter;
-modelfva2 = changeRxnBounds(modelfva2, 'EX_glc(e)', -20, 'l');
-modelfva2 = changeRxnBounds(modelfva2, 'EX_o2(e)', 0, 'l');
+>> % modelfva2 represents anaerobic condition
+>> modelfva2 = modelalter;
+>> modelfva2 = changeRxnBounds(modelfva2, 'EX_glc(e)', -20, 'l');
+>> modelfva2 = changeRxnBounds(modelfva2, 'EX_o2(e)', 0, 'l');
 
 
-% Selecting several reactions of the model that we want to analyse with FVA
-rxnsList = {'DM_atp_c_'; 'ACOAHi'; 'ALCD21_D'; 'LALDO'; 'ME2m';...
+>> % Selecting several reactions of the model that we want to analyse with FVA
+>> rxnsList = {'DM_atp_c_'; 'ACOAHi'; 'ALCD21_D'; 'LALDO'; 'ME2m';...
 'AKGDm'; 'PGI'; 'PGM'; 'r0062'};
 
-% Run FVA analysis for the model with the constraints that simulates aerobic conditions:
-[minFlux1, maxFlux1, Vmin1, Vmax1] = fluxVariability(modelfva1, 100, 'max', rxnsList)
+>> % Run FVA analysis for the model with the constraints that simulates aerobic conditions:
+>> [minFlux1, maxFlux1, Vmin1, Vmax1] = fluxVariability(modelfva1, 100, 'max', rxnsList)
 
-% Run FVA analysis for the model with the constraints that simulates anaerobic conditions:
-[minFlux2, maxFlux2, Vmin2, Vmax2] = fluxVariability(modelfva2, [], [], rxnsList)
+
+
+>> % Run FVA analysis for the model with the constraints that simulates anaerobic conditions:
+>> [minFlux2, maxFlux2, Vmin2, Vmax2] = fluxVariability(modelfva2, [], [], rxnsList)
+
 ```
+
+#### FASTFVA
+**fastFVA() function** - for the models with more than 1,000 reactions.
+
+When the number of reaction on which you want to perform a flux variability is higher to 1000, it is recommended to use fastFVA() function instead of fluxVariability(). Note that for large models the memory requirements may become prohibitive.
+
+Inorder to use this function you need to have the IBM CPLEX Solver installed. Gurobi is currently not supported.
+
+**Sample Example:**
+```
+>> cd cobratoolbox
+>> initCobraToolbox
+
+>> load('recon3_final_region_L3_C_imat.mat');
+>> [minFluxF, maxFluxF] = fastFVA(model_imat);
+
+The version of CPLEX is 128.
+
+-- Warning:: You may only ouput 4, 7 or 9 variables.
+
+ >> Solving Model.S. (uncoupled)
+ >> The number of arguments is: input: 1, output 2.
+ >> Size of stoichiometric matrix: (3510,5014)
+ >> All reactions are solved (5014 reactions - 100%).
+ >> 0 reactions out of 5014 are minimized (0.00%).
+ >> 0 reactions out of 5014 are maximized (0.00%).
+ >> 5014 reactions out of 5014 are minimized and maximized (100.00%).
+
+ -- Starting to loop through the 2 workers. --
+
+ -- The splitting strategy is 0. --
+
+----------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------
+--  Task Launched // TaskID: 2 / 2 (LoopID = 1) <> [1, 2507] / [3510, 5014].
+ >> Number of reactions given to the worker: 2507
+ >> The number of reactions retrieved is 2507
+ >> Log files will be stored at /Users/saiteja/Desktop/December/on ada/cobratoolbox/src/analysis/FVA/fastFVA/logFiles
+ -- Start time:     Sun Dec 16 20:55:30 2018
+ >> #Task.ID = 2; logfile: cplexint_logfile_2.log
+
+ -- Warning:: The optPercentage is higher than 90. The solution process might take longer than you expect.
+
+        -- Minimization (iRound = 0). Number of reactions: 2507. - printLevel 1
+        -- Maximization (iRound = 1). Number of reactions: 2507.
+ -- End time:     Sun Dec 16 20:57:20 2018
+ >> Time spent in FVAc: 109.9 seconds.
+----------------------------------------------------------------------------------
+ ==> 50.0% done. Please wait ...
+--  Task Launched // TaskID: 1 / 2 (LoopID = 2) <> [2508, 5014] / [3510, 5014].
+ >> Number of reactions given to the worker: 2507
+ >> The number of reactions retrieved is 2507
+ >> Log files will be stored at /Users/saiteja/Desktop/December/on ada/cobratoolbox/src/analysis/FVA/fastFVA/logFiles
+ -- Start time:     Sun Dec 16 20:55:30 2018
+ >> #Task.ID = 1; logfile: cplexint_logfile_1.log
+
+ -- Warning:: The optPercentage is higher than 90. The solution process might take longer than you expect.
+
+        -- Minimization (iRound = 0). Number of reactions: 2507. - printLevel 1
+        -- Maximization (iRound = 1). Number of reactions: 2507.
+ -- End time:     Sun Dec 16 20:57:22 2018
+ >> Time spent in FVAc: 111.5 seconds.
+----------------------------------------------------------------------------------
+ ==> 100% done. Analysis completed.
+
+>> rxns = model_imat.rxns;
+>> t = table(minFluxF, maxFluxF, rxns);
+>> writetable(t, 'L3_C_FVA_table.csv', 'WriteVariableNames' , 0)
+>> clearvars
+
+```
+
+The outputs of the above fastFVA function are:
+- minFlux – Minimum flux for each reaction
+- maxFlux – Maximum flux for each reaction
+
+The file *recon3_final_region_L3_C_imat.mat* used in the above code snippet is available **[here](resources/)**. 
+
 
 Refer: [Flux Variability analysis Cobra](https://opencobra.github.io/cobratoolbox/stable/tutorials/tutorialFVA.html)
 
