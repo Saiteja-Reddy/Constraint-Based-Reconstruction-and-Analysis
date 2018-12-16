@@ -8,7 +8,7 @@ The COBRA Toolbox supports the use of models in multiple formats, including:
 - SimPheny format
 - Excel format
 
-The most commonly used model format is a *MAT-file (.mat ) format* where by a simple MATLAB struct contains one or more of the fields defined [here](fields.md)
+The most commonly used model format is a *MAT-file (.mat ) format* where by a simple MATLAB struct contains one or more of the fields defined **[here](fields.md)**
 
 **To read a model into Cobra Toolbox:**
 
