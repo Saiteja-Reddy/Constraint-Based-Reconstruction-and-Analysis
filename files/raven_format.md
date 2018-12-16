@@ -1,6 +1,6 @@
 ## RAVEN Model Fields List
 
-The following fields are defined in the RAVEN toolbox. If the field is present in a model, it should have the properties defined here and should be of the mentioned types. 
+The following fields are defined in the RAVEN toolbox. If the field is present in a model, it should have the properties defined here and should be of the mentioned types.
 
 | Field name          	| Subfield name 	| Data type                              	| Description                                                         	| Mandatory                                                   	|
 |---------------------	|---------------	|----------------------------------------	|---------------------------------------------------------------------	|-------------------------------------------------------------	|
@@ -57,3 +57,6 @@ The following fields are defined in the RAVEN toolbox. If the field is present i
 | metCharges          	|               	| Column Vector of Doubles               	| Charge information for metabolites                                  	| Non-mandatory field                                         	|
 | unconstrained       	|               	| Column Vector of Doubles               	| Binary vector, positive for exchange (boundary) metabolites         	| Non-mandatory field                                         	|
 | rxnFrom             	|               	| Column Cell Array of Strings           	| The name of template model from which particular reaction was taken 	| Non-mandatory field for internal use, not exported anywhere 	|
+
+
+[Back to "Using the RAVEN Toolbox"](raven_usage.md)

@@ -100,3 +100,11 @@ glcr[m]	D-Glucarate	0.0038388
 ```
 
 The above used files are provided [here](resources/).
+
+
+**References:**
+1. [Uncovering transcriptional regulation of metabolism by using metabolic network topology](https://www.pnas.org/content/102/8/2685)
+2. [Reporter pathway analysis from transcriptome data: Metabolite-centric versus Reaction-centric approach](https://www.nature.com/articles/srep14563)
+3. [RAVEN Official Tutorials](https://github.com/SysBioChalmers/RAVEN/tree/master/tutorial)
+
+[Back to Contents](../README.md)
