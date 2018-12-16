@@ -63,4 +63,4 @@ The following fields are defined in the COBRA toolbox. If the field is present i
 |`model.D`| `ctrs x evars` | Sparse or Full Matrix of Double | Matrix to store elements that contain interactions between additional Constraints and additional Variables |
 
 
-[Back to "Using the COBRA Toolbox"](../software.md)
+[Back to "Using the COBRA Toolbox"](software.md)
