@@ -10,6 +10,9 @@ The HMR Models can be downloaded from **[here](http://www.metabolicatlas.org/dow
 
 For simulation purposes in MATLAB, the authors recommend to import the SBML file using the RAVEN Toolbox function *importModel*.
 
+
+<img src="pics/HMR.png" width="570" height="300">
+
 The Human Metabolic Atlas Resource also provides various Tissue models, which can be accessed from **[here](http://www.metabolicatlas.org/downloads/tissue)**.
 
 We can also have a look at the various pathways along with their annotations in the Metabolic Atlas Map**[here](http://www.metabolicatlas.org/atlas)**.
