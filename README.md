@@ -14,7 +14,8 @@ The main aim of this independent study would be to understand the basics of geno
 9. [Using the COBRA Toolbox](files/software.md)
 10. [Getting Started with the RAVEN Toolbox](files/raven.md)
 11. [Using the RAVEN Toolbox](files/raven_usage.md)
-12. [Some Generic Human Metabolic Models](files/models.md)
+13. [Some Sample Simulations](files/samples.md)
+14. [Some Generic Human Metabolic Models](files/models.md)
 
 ### Outcome:
   - Understand the above topics with required mathematical formulations.
