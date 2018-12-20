@@ -22,7 +22,7 @@ To import these models, we use the RAVEN Toolbox method, *importModel* function.
 
 The biomass equation is described as followed denoted as “CancerBiomass_OF” in the models and produces one unit of “cancer_biomass[s]”.
 
-<img src="pics/biomass.png" width="550" height="600">
+<img src="pics/biomass.png" width="650" height="700">
 
 The above coefficients are derived assuming that metabolic fluxes are measured in terms of mmol
 g<sub>DW</sub> <sup>-1</sup> h<sup>-1</sup>
